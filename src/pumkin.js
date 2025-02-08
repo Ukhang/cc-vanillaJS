@@ -5,23 +5,24 @@ class Pumpkin {
         this.rad = rad;
     }
 
-    draw(ctx) {
+    draw(ctx, openness) {
         ctx.save();
         ctx.translate(this.x, this.y);
         ctx.scale(this.rad, this.rad);
 
-        this.#drawHead(ctx);
-        this.#drawEyes(ctx);
-        this.#drawNose(ctx);
-        this.#drawMouth(ctx);
+        this.#drawHead(ctx, openness);
+        this.#drawEyes(ctx, openness);
+        this.#drawNose(ctx, openness);
+        this.#drawMouth(ctx, openness);
 
         ctx.restore();
     }
 
-    #drawMouth(ctx) {
+    #drawMouth(ctx, openness) {
         ctx.fillStyle="black";
         ctx.save();
         ctx.translate(0, 0.4);
+        ctx.scale(1-openness*0.2, 0.2+openness);
 
         ctx.moveTo(-0.6, 0);
         ctx.lineTo(-0.4, -0.17);
@@ -41,9 +42,9 @@ class Pumpkin {
         ctx.restore();
     }
 
-    #drawNose(ctx) {
+    #drawNose(ctx, openness) {
         ctx.save();
-        ctx.translate(-0.08, -0.0);
+        ctx.translate(-0.08, -openness*0.05);
 
         ctx.fillStyle = "black";
         ctx.beginPath();
@@ -56,7 +57,7 @@ class Pumpkin {
         ctx.restore();
 
         ctx.save();
-        ctx.translate(0.08, -0.0);
+        ctx.translate(0.08, -openness*0.05);
 
         ctx.fillStyle = "black";
         ctx.beginPath();
@@ -69,9 +70,10 @@ class Pumpkin {
         ctx.restore();
     }
 
-    #drawEyes(ctx) {
+    #drawEyes(ctx, openness) {
         ctx.save();
         ctx.translate(-0.4, -0.4);
+        ctx.scale(1+openness*0.3, 1.2-openness);
 
         ctx.fillStyle = "black";
         ctx.beginPath();
@@ -85,6 +87,7 @@ class Pumpkin {
 
         ctx.save();
         ctx.translate(0.4, -0.4);
+        ctx.scale(1+openness*0.3, 1.2-openness);
 
         ctx.fillStyle = "black";
         ctx.beginPath();
@@ -97,7 +100,7 @@ class Pumpkin {
         ctx.restore();
     }
 
-    #drawHead(ctx) {
+    #drawHead(ctx, openness) {
         ctx.fillStyle = "green";
         ctx.beginPath();
         ctx.rect(-0.05, -1, 0.1, 0.1);
@@ -105,18 +108,18 @@ class Pumpkin {
 
         ctx.fillStyle="rgb(255,150,0)";
         ctx.beginPath();
-        ctx.ellipse(-0.6, 0.03, 0.4, 0.92, 0, 0, Math.PI * 2);
+        ctx.ellipse(-0.6, 0.03, 0.4, 0.92, -openness*0.1, 0, Math.PI * 2);
         ctx.fill();
         ctx.beginPath();
-        ctx.ellipse(0.6, 0.03, 0.4, 0.93, 0, 0, Math.PI * 2);
+        ctx.ellipse(0.6, 0.03, 0.4, 0.93, openness*0.1, 0, Math.PI * 2);
         ctx.fill();
 
         ctx.fillStyle="rgb(255,170,0)";
         ctx.beginPath();
-        ctx.ellipse(-0.3, 0.03, 0.4, 0.95, 0, 0, Math.PI * 2);
+        ctx.ellipse(-0.3, 0.03, 0.4, 0.95, -openness*0.05, 0, Math.PI * 2);
         ctx.fill();
         ctx.beginPath();
-        ctx.ellipse(0.3, 0.03, 0.4, 0.95, 0, 0, Math.PI * 2);
+        ctx.ellipse(0.3, 0.03, 0.4, 0.95, openness*0.05, 0, Math.PI * 2);
         ctx.fill();
 
         ctx.fillStyle="rgb(255,190,0)";
