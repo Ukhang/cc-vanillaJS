@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cc-VanillaJS</title>
+    <link rel="icon" href="./logo.svg" type="image/x-icon" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Heming", sans-serif;
+        background-color: #fff;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        letter-spacing: 0.5px;
+      }
+
+      @font-face {
+        font-family: "Heming";
+        src: url("./fonts/heming-variable.ttf") format("truetype");
+      }
+
+      main {
+        padding: 20px;
+        max-width: 650px;
+        width: 100%;
+        height: 400px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+        color: #000;
+        font-weight: 600;
+      }
+
+      ul {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      li {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+        font-weight: 400;
+        color: #6e6c6c;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+      }
+
+      a:hover {
+        color: #007bff;
+      }
+
+      section {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      p {
+        color: #a09f9f;
+        font-size: 1rem;
+      }
+
+      span {
+        font-weight: 600;
+        color: #b7b7b7;
+      }
+
+      footer {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        max-width: 600px;
+        width: 100%;
+      }
+
+      footer a {
+        color: #a09f9f;
+      }
+
+      img {
+        width: 60px;
+        height: auto;
+        margin-bottom: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <img src="./logo.svg" alt="Logo">
+        <h1>CC VanillaJS</h1>
+        <p>Creative coding vanilla JS</p>
+      </section>
+      <ul>
+        <li>
+          <a href="./speaking-pumpkin-animation.html"><span>01</span> Speaking Pumpkin Animation</a>
+        </li>
+        <li>
+          <a href="#"><span>02</span> Pixel Manipulation (upcoming)</a>
+        </li>
+        <li>
+          <a href="#"><span>03</span> Procedural Drawing and Animation (upcoming)</a>
+        </li>
+      </ul>
+    </main>
+    <footer>
+      <a href="https://ukhang.vercel.app/">@ukhang</a>
+      <a href="https://github.com/Ukhang/cc-vanillaJS">GitHub</a>
+      <time datetime="2025-01-25">(From 2025/1/25)</time>
+    </footer>
+  </body>
+</html>
