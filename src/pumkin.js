@@ -13,13 +13,37 @@ class Pumpkin {
         this.#drawHead(ctx);
         this.#drawEyes(ctx);
         this.#drawNose(ctx);
+        this.#drawMouth(ctx);
+
+        ctx.restore();
+    }
+
+    #drawMouth(ctx) {
+        ctx.fillStyle="black";
+        ctx.save();
+        ctx.translate(0, 0.4);
+
+        ctx.moveTo(-0.6, 0);
+        ctx.lineTo(-0.4, -0.17);
+        ctx.lineTo(-0.2, -0.08);
+        ctx.lineTo(0, -0.2);
+        ctx.lineTo(+0.2, -0.08);
+        ctx.lineTo(+0.4, -0.17);
+        ctx.lineTo(0.6, 0);
+        ctx.lineTo(+0.4, 0.17);
+        ctx.lineTo(+0.2, 0.08);
+        ctx.lineTo(0, 0.2);
+        ctx.lineTo(-0.2, 0.08);
+        ctx.lineTo(-0.4, 0.17);
+        ctx.closePath();
+        ctx.fill();
 
         ctx.restore();
     }
 
     #drawNose(ctx) {
         ctx.save();
-        ctx.translate(-0.08, -0.1);
+        ctx.translate(-0.08, -0.0);
 
         ctx.fillStyle = "black";
         ctx.beginPath();
@@ -32,7 +56,7 @@ class Pumpkin {
         ctx.restore();
 
         ctx.save();
-        ctx.translate(0.08, -0.1);
+        ctx.translate(0.08, -0.0);
 
         ctx.fillStyle = "black";
         ctx.beginPath();
