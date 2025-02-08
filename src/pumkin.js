@@ -6,9 +6,15 @@ class Pumpkin {
     }
 
     draw(ctx) {
+        this.save();
+        ctx.translate(this.x, this.y);
+        ctx.scale(this.rad, this.rad);
+
         ctx.fillStyle = "gray";
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.rad, 0, Math.PI * 2);
+        ctx.rect(-1, -1, 2, 2);
         ctx.fill();
+        
+        this.restore();
     }
 }
