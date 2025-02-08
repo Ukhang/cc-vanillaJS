@@ -12,6 +12,35 @@ class Pumpkin {
 
         this.#drawHead(ctx);
         this.#drawEyes(ctx);
+        this.#drawNose(ctx);
+
+        ctx.restore();
+    }
+
+    #drawNose(ctx) {
+        ctx.save();
+        ctx.translate(-0.08, -0.1);
+
+        ctx.fillStyle = "black";
+        ctx.beginPath();
+        ctx.moveTo(-0.05, 0);
+        ctx.lineTo(0.05, -0.05);
+        ctx.lineTo(0.05, 0.05);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.restore();
+
+        ctx.save();
+        ctx.translate(0.08, -0.1);
+
+        ctx.fillStyle = "black";
+        ctx.beginPath();
+        ctx.moveTo(0.05, 0);
+        ctx.lineTo(-0.05, -0.05);
+        ctx.lineTo(-0.05, 0.05);
+        ctx.closePath();
+        ctx.fill();
 
         ctx.restore();
     }
