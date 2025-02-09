@@ -49,6 +49,15 @@
         gap: 10px;
       }
 
+      @media (max-width: 768px) {
+        ul {
+          grid-template-columns: repeat(
+            1,
+            1fr
+          );
+        }
+      }
+
       li {
         list-style: none;
       }
@@ -84,8 +93,10 @@
       footer {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 6px;
-        max-width: 600px;
+        padding: 20px;
+        max-width: 650px;
         width: 100%;
       }
 
@@ -103,24 +114,29 @@
   <body>
     <main>
       <section>
-        <img src="./logo.svg" alt="Logo">
+        <img src="./logo.svg" alt="Logo" />
         <h1>CC VanillaJS</h1>
         <p>Creative coding vanilla JS</p>
       </section>
       <ul>
         <li>
-          <a href="./speaking-pumpkin-animation.html"><span>01</span> Speaking Pumpkin Animation</a>
+          <a href="./speaking-pumpkin-animation.html"
+            ><span>01</span> Speaking Pumpkin Animation</a
+          >
         </li>
         <li>
           <a href="#"><span>02</span> Pixel Manipulation (upcoming)</a>
         </li>
         <li>
-          <a href="#"><span>03</span> Procedural Drawing and Animation (upcoming)</a>
+          <a href="#"
+            ><span>03</span> Procedural Drawing and Animation (upcoming)</a
+          >
         </li>
       </ul>
     </main>
     <footer>
       <a href="https://ukhang.vercel.app/">@ukhang</a>
+      <span>.</span>
       <a href="https://github.com/Ukhang/cc-vanillaJS">GitHub</a>
       <time datetime="2025-01-25">(From 2025/1/25)</time>
     </footer>
