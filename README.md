@@ -1,10 +1,10 @@
-# ![logo 1](https://github.com/user-attachments/assets/3aeec50c-c433-4eb6-9ef6-b5e1fd473c94) cc-vanilaJS
-**cc-vanilaJS** is a creative coding project dedicated to building visually captivating and interactive experiences using pure JavaScript.
+# ![logo 1](https://github.com/user-attachments/assets/3aeec50c-c433-4eb6-9ef6-b5e1fd473c94) cc-vanillaJS
+**cc-vanillaJS** is a creative coding project dedicated to building visually captivating and interactive experiences using pure JavaScript.
 
 ## Project Structure
 
 ```
-cc-vanilaJS/
+cc-vanillaJS/
 │── LICENSE
 │── README.md
 │── index.html
@@ -23,8 +23,8 @@ cc-vanilaJS/
    ```
 2. Navigate to the project directory:
    ```sh
-   cd cc-vanilaJS
-   ```
+   cd cc-vanillaJS
+   ``
 3. Open `index.html` or any specific `.html` file in your browser to explore the visualizations.
 
 ## Contributing
