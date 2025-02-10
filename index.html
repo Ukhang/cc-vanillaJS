@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>cc-VanillaJS</title>
+    <title>cc-VanillaJS - Creative coding vanilla js</title>
     <link rel="icon" href="./logo.svg" type="image/x-icon" />
     <style>
       * {
@@ -49,6 +49,15 @@
         gap: 10px;
       }
 
+      @media (max-width: 768px) {
+        ul {
+          grid-template-columns: repeat(
+            1,
+            1fr
+          );
+        }
+      }
+
       li {
         list-style: none;
       }
@@ -84,8 +93,10 @@
       footer {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 6px;
-        max-width: 600px;
+        padding: 20px;
+        max-width: 650px;
         width: 100%;
       }
 
@@ -94,7 +105,7 @@
       }
 
       img {
-        width: 60px;
+        width: 80px;
         height: auto;
         margin-bottom: 6px;
       }
@@ -103,24 +114,44 @@
   <body>
     <main>
       <section>
-        <img src="./logo.svg" alt="Logo">
+        <img src="./logo.svg" alt="Logo" />
         <h1>CC VanillaJS</h1>
         <p>Creative coding vanilla JS</p>
       </section>
       <ul>
         <li>
-          <a href="./speaking-pumpkin-animation.html"><span>01</span> Speaking Pumpkin Animation</a>
+          <a href="./speaking-pumpkin-animation.html"
+            ><span>01</span> Speaking Pumpkin Animation</a
+          >
         </li>
         <li>
-          <a href="#"><span>02</span> Pixel Manipulation (upcoming)</a>
+          <a href="./pixel-manipulation.html"><span>02</span> Pixel Manipulation</a>
         </li>
         <li>
-          <a href="#"><span>03</span> Procedural Drawing and Animation (upcoming)</a>
+          <a href="./simple-sorting-visualizer.html"
+            ><span>03</span> Sorting Visualizer (Simple)</a
+          >
+        </li>
+        <li>
+          <a href="./complex-sorting-visualizer.html"
+            ><span>04</span> Sorting Visualizer (Complex)</a
+          >
+        </li>
+        <li>
+          <a href="./advanced-sorting-visualizer.html"
+            ><span>05</span> Sorting Visualizer (Advanced)</a
+          >
+        </li>
+        <li>
+          <a href="./flag-simulation.html"
+            ><span>06</span> Flag Simulation </a
+          >
         </li>
       </ul>
     </main>
     <footer>
       <a href="https://ukhang.vercel.app/">@ukhang</a>
+      <span>.</span>
       <a href="https://github.com/Ukhang/cc-vanillaJS">GitHub</a>
       <time datetime="2025-01-25">(From 2025/1/25)</time>
     </footer>
