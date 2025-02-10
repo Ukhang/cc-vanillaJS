@@ -1,5 +1,5 @@
 # ![logo 1](https://github.com/user-attachments/assets/3aeec50c-c433-4eb6-9ef6-b5e1fd473c94) cc-vanillaJS
-**cc-vanillaJS** is a creative coding project dedicated to building visually captivating and interactive experiences using pure JavaScript.
+cc-vanillaJS is a creative coding project dedicated to building visually captivating and interactive experiences using pure JavaScript.
 
 [ukhang.github.io/cc-vanillajs](https://ukhang.github.io/cc-vanillaJS/)
 
