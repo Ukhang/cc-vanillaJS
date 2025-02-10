@@ -24,7 +24,7 @@ cc-vanillaJS/
 2. Navigate to the project directory:
    ```sh
    cd cc-vanillaJS
-   ``
+   ```
 3. Open `index.html` or any specific `.html` file in your browser to explore the visualizations.
 
 ## Contributing
