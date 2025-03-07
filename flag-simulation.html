@@ -3,6 +3,7 @@
    <head>
       <title>Flag Simulation</title>
       <link rel="icon" href="./logo.svg" type="image/x-icon" />
+      <link rel="stylesheet" href="./arrow-button.css">
       <style>
          body{
             margin:0;
@@ -20,8 +21,15 @@
       </style>
    </head>
    <body>
+ 
+      <!-- Back Arrow Button -->
+      <button id="backArrow" class="back-arrow">
+         ←
+      </button>
+
       <canvas id="myCanvas"></canvas>
 
+      <script src="./src/common/arrow-button.js"></script>
       <script src="./src/flag-simulation/math.js"></script>
       <script src="./src/flag-simulation/segment.js"></script>
       <script src="./src/flag-simulation/particle.js"></script>

@@ -1,0 +1,22 @@
+.back-arrow {
+  position: fixed;
+  top: 20px;
+  left: 28px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 9999; /* Ensure it stays on top */
+}
+
+.back-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
