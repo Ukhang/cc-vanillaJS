@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Wave Sky</title>
+    <link rel="icon" href="./logo.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./arrow-button.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #041a3b;
+            font-family: Arial, sans-serif;
+        }
+        
+        canvas {
+            display: block;
+        }
+        
+        .controls {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            z-index: 10;
+        }
+        
+        .controls label {
+            display: block;
+            margin: 8px 0 3px;
+        }
+        
+        .controls input[type="range"] {
+            width: 200px;
+        }
+        
+        .control-row {
+            margin-bottom: 10px;
+        }
+        
+        button {
+            background: #4a90e2;
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-right: 5px;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #3a80d2;
+        }
+        
+        .theme-buttons {
+            margin-top: 10px;
+        }
+        
+        .theme-button {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .theme-button.active {
+            transform: scale(1.1);
+            border: 2px solid white;
+        }
+        
+        .info {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            max-width: 300px;
+        }
+        
+        .formula {
+            margin-top: 5px;
+            font-style: italic;
+            font-family: monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Arrow Button -->
+    <button id="backArrow" class="back-arrow">
+        ←
+     </button>
+
+    <canvas id="waveCanvas"></canvas>
+    
+    <div class="controls">
+        <h3>Wave Controls</h3>
+        <div class="control-row">
+            <label for="amplitude">Amplitude</label>
+            <input type="range" id="amplitude" min="5" max="100" value="30">
+        </div>
+        <div class="control-row">
+            <label for="frequency">Frequency</label>
+            <input type="range" id="frequency" min="1" max="20" value="3">
+        </div>
+        <div class="control-row">
+            <label for="speed">Speed</label>
+            <input type="range" id="speed" min="1" max="10" value="2">
+        </div>
+        <div class="control-row">
+            <label for="layers">Wave Layers</label>
+            <input type="range" id="layers" min="1" max="8" value="4">
+        </div>
+        <div class="control-row">
+            <label for="complexity">Wave Complexity</label>
+            <input type="range" id="complexity" min="1" max="5" value="2">
+        </div>
+        
+        <div>
+            <button id="randomize">Randomize</button>
+            <button id="pausePlay">Pause</button>
+        </div>
+        
+        <h3>Colors</h3>
+        <div class="theme-buttons">
+            <div class="theme-button active" style="background: linear-gradient(#041a3b, #2c5fa3);" data-theme="night"></div>
+            <div class="theme-button" style="background: linear-gradient(#ff7e5f, #feb47b);" data-theme="sunset"></div>
+            <div class="theme-button" style="background: linear-gradient(#2bc0e4, #eaecc6);" data-theme="day"></div>
+            <div class="theme-button" style="background: linear-gradient(#8360c3, #2ebf91);" data-theme="aurora"></div>
+            <div class="theme-button" style="background: linear-gradient(#000000, #434343);" data-theme="grayscale"></div>
+        </div>
+    </div>
+    
+    <div class="info">
+        <h3>Math Wave Sky</h3>
+        <p>A mathematical representation of waves using sine and cosine functions.</p>
+        <div class="formula" id="currentFormula">
+            y = A * sin(fx + t) + A/2 * sin(2fx + t*1.5)
+        </div>
+    </div>
+
+    <script src="./src/common/arrow-button.js"></script>
+    <script src="./src/math-wave-sky/main.js"></script>
+</body>
