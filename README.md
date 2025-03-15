@@ -3,6 +3,9 @@ cc-vanillaJS is a creative coding project dedicated to building visually captiva
 
 [ukhang.github.io/cc-vanillajs](https://ukhang.github.io/cc-vanillaJS/)
 
+![Group 22](https://github.com/user-attachments/assets/2f3fefef-2dd5-491b-ae88-999f9a60fecf)
+
+
 ## Project Structure
 
 ```
