@@ -229,7 +229,7 @@ document.querySelectorAll(".theme-button").forEach((button) => {
         .backgroundImage.match(/rgb\([^)]+\)|#[0-9a-f]{3,6}/gi)[0],
       window
         .getComputedStyle(this)
-        .backgroundImage.match(/rgb\([^)]+\)|#[0-9a-f]{3,6}/gi)[1]
+        .backgroundImage.match(/rgb\([^)]+\)|#[0-9a-f]{3,6}/gi)[1],
     );
 
     // Generate stars if night theme

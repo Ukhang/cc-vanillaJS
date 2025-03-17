@@ -1,117 +1,126 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./logo.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="./arrow-button.css">
+    <link rel="stylesheet" href="./arrow-button.css" />
     <title>Solar System Simulation</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-            color: white;
-        }
-        
-        .container {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .sun {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background: radial-gradient(circle at 30px 30px, #FFF176 0%, #F57F17 70%, #FF6F00 100%);
-            border-radius: 50%;
-            box-shadow: 0 0 50px #FF9800, 0 0 100px #FF5722;
-            z-index: 10;
-        }
-        
-        .orbit {
-            position: absolute;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            z-index: 1;
-        }
-        
-        .planet {
-            position: absolute;
-            border-radius: 50%;
-            transform-origin: 50% 50%;
-            transition: transform 0.2s ease-in-out;
-        }
-        
-        .planet-info {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 15px;
-            border-radius: 8px;
-            max-width: 300px;
-            z-index: 100;
-        }
-        
-        .controls {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 10px;
-            border-radius: 8px;
-            display: flex;
-            gap: 10px;
-            z-index: 100;
-        }
-        
-        button {
-            padding: 8px 16px;
-            background-color: #555;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        button:hover {
-            background-color: #777;
-        }
-        
-        .star {
-            position: absolute;
-            background-color: white;
-            border-radius: 50%;
-            z-index: 0;
-        }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+        color: white;
+      }
+
+      .container {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .sun {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        background: radial-gradient(
+          circle at 30px 30px,
+          #fff176 0%,
+          #f57f17 70%,
+          #ff6f00 100%
+        );
+        border-radius: 50%;
+        box-shadow:
+          0 0 50px #ff9800,
+          0 0 100px #ff5722;
+        z-index: 10;
+      }
+
+      .orbit {
+        position: absolute;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .planet {
+        position: absolute;
+        border-radius: 50%;
+        transform-origin: 50% 50%;
+        transition: transform 0.2s ease-in-out;
+      }
+
+      .planet-info {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 15px;
+        border-radius: 8px;
+        max-width: 300px;
+        z-index: 100;
+      }
+
+      .controls {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 10px;
+        border-radius: 8px;
+        display: flex;
+        gap: 10px;
+        z-index: 100;
+      }
+
+      button {
+        padding: 8px 16px;
+        background-color: #555;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #777;
+      }
+
+      .star {
+        position: absolute;
+        background-color: white;
+        border-radius: 50%;
+        z-index: 0;
+      }
     </style>
-</head>
-<body>
-    <button id="backArrow" class="back-arrow">
-      ←
-    </button>
+  </head>
+  <body>
+    <button id="backArrow" class="back-arrow">←</button>
 
     <div class="container">
-        <div class="sun"></div>
-        <div class="planet-info">
-            <h2 id="info-name">Sun</h2>
-            <p id="info-description">The Sun is the star at the center of our Solar System. It's a nearly perfect sphere of hot plasma, with a diameter of about 1.39 million kilometers.</p>
-        </div>
-        <div class="controls">
-            <button id="pause-btn">Pause</button>
-            <button id="speed-up">Speed Up</button>
-            <button id="slow-down">Slow Down</button>
-        </div>
+      <div class="sun"></div>
+      <div class="planet-info">
+        <h2 id="info-name">Sun</h2>
+        <p id="info-description">
+          The Sun is the star at the center of our Solar System. It's a nearly
+          perfect sphere of hot plasma, with a diameter of about 1.39 million
+          kilometers.
+        </p>
+      </div>
+      <div class="controls">
+        <button id="pause-btn">Pause</button>
+        <button id="speed-up">Speed Up</button>
+        <button id="slow-down">Slow Down</button>
+      </div>
     </div>
     <script src="./src/common/arrow-button.js"></script>
     <script src="./src/solar-system/main.js"></script>
-</body>
+  </body>
 </html>

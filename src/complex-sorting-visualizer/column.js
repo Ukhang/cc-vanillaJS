@@ -66,7 +66,7 @@ class Column {
       0,
       Math.PI,
       Math.PI * 2,
-      true
+      true,
     );
     ctx.lineTo(right, top);
     ctx.ellipse(
@@ -77,7 +77,7 @@ class Column {
       0,
       0,
       Math.PI * 2,
-      true
+      true,
     );
     ctx.fill();
     ctx.stroke();
