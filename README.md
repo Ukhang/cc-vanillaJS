@@ -12,6 +12,7 @@ cc-vanillaJS is a creative coding project dedicated to building visually captiva
 cc-vanillaJS/
 │── LICENSE
 │── README.md
+│── .gitignore
 │── index.html
 │── logo.svg
 │── example-project.html
