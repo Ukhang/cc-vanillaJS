@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./logo.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./arrow-button.css">
+    <title>Black Hole Simulation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        canvas {
+            display: block;
+        }
+        .controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 300px;
+        }
+        .slider-container {
+            margin: 10px 0;
+        }
+        .slider-container label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ccc;
+        }
+        input[type="range"] {
+            width: 100%;
+        }
+        .value-display {
+            display: inline-block;
+            color: #0af;
+            margin-left: 10px;
+        }
+        h1 {
+            font-size: 18px;
+            margin: 0 0 15px 0;
+            color: #0af;
+        }
+        button {
+            background: #0af;
+            border: none;
+            padding: 8px 15px;
+            color: black;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #08f;
+        }
+        .info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="backArrow" class="back-arrow">
+      ←
+    </button>
+    <canvas id="simulationCanvas"></canvas>
+    
+    <div class="controls">
+        <h1>Black Hole Simulator</h1>
+        
+        <div class="slider-container">
+            <label for="massSlider">Black Hole Mass: <span id="massValue" class="value-display">5000</span></label>
+            <input type="range" id="massSlider" min="1000" max="10000" value="5000">
+        </div>
+        
+        <div class="slider-container">
+            <label for="particleCountSlider">Particle Count: <span id="particleCountValue" class="value-display">200</span></label>
+            <input type="range" id="particleCountSlider" min="50" max="1000" value="200">
+        </div>
+        
+        <div class="slider-container">
+            <label for="accretionDiskSlider">Accretion Disk Density: <span id="accretionDiskValue" class="value-display">0.5</span></label>
+            <input type="range" id="accretionDiskSlider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        
+        <button id="resetButton">Reset Simulation</button>
+    </div>
+    
+    <div class="info">
+        <p>This is a simplified black hole simulation using Newtonian physics (not actual general relativity).</p>
+        <p>The visualization shows particles being attracted to a central mass, forming an accretion disk.</p>
+    </div>
+
+
+    <script src="./src/common/arrow-button.js"></script>
+    <script src="./src/black-hole/main.js"></script>
+</body>
+</html>
