@@ -1,0 +1,50 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows system files
+Thumbs.db
+desktop.ini
+
+# Editor-specific files
+# VS Code
+.vscode/
+# IntelliJ IDEA
+.idea/
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Build and dependency directories
+node_modules/           # Node.js dependencies
+dist/                   # Build output folder
+build/                  # Another common build folder
+*.o                     # Object files (C/C++)
+*.class                 # Compiled Java class files
+
+# Environment and configuration files
+.env                    # Environment variables (e.g., API keys)
+*.env.local
+*.env.development
+*.env.production
+
+# Dependency lock files (optional, depending on your workflow)
+# package-lock.json     # Uncomment if you don’t want to track npm lockfile
+# yarn.lock             # Uncomment if you don’t want to track Yarn lockfile
+
+# Cache files
+*.cache
+__pycache__/            # Python bytecode cache
+*.pyc                   # Compiled Python files
+
+# Miscellaneous
+*.zip                   # Ignore zip archives
+*.tar.gz                # Ignore tarballs
+*.rar                   # Ignore RAR archives
