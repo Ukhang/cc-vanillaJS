@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Anime Animation</title>
+    <link rel="icon" href="./logo.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./arrow-button.css">
+    <style>
+        body {
+            background-color: #111;
+            color: #0f0;
+            font-family: monospace;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            user-select: none;
+        }
+        
+        #container {
+            position: relative;
+            width: 80vw;
+            height: 80vh;
+            border: 1px solid #333;
+            overflow: hidden;
+        }
+        
+        .ascii-character {
+            position: absolute;
+            font-size: 12px;
+            white-space: pre;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .controls {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            z-index: 100;
+        }
+        
+        .controls button {
+            background-color: #222;
+            color: #0f0;
+            border: 1px solid #0f0;
+            padding: 5px 10px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        
+        .controls button:hover {
+            background-color: #333;
+        }
+        
+        .info {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #0f0;
+            font-size: 12px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Arrow Button -->
+    <button id="backArrow" class="back-arrow">
+        ←
+     </button>
+    <div id="container">
+        <div class="controls">
+            <button id="add-character">Add Character</button>
+            <button id="toggle-gravity">Toggle Gravity</button>
+            <button id="toggle-color">Toggle Color Mode</button>
+        </div>
+        <div class="info">
+            Click characters to interact<br>
+            Drag to move them around
+        </div>
+    </div>
+
+    <script src="./src/common/arrow-button.js"></script>
+    <script src="./src/ascii-anime/main.js"></script>
+</body>
+</html>
