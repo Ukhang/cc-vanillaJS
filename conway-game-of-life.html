@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./logo.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./arrow-button.css" />
+
+    <title>Conway's Game of Life</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .description {
+        color: #555;
+        margin-bottom: 20px;
+        max-width: 600px;
+        text-align: center;
+      }
+
+      .controls {
+        margin-bottom: 20px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      button {
+        padding: 8px 15px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      button:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+      }
+
+      #speed-control {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      #speed-label {
+        font-size: 14px;
+        color: #555;
+      }
+
+      select {
+        padding: 6px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+
+      canvas {
+        background-color: white;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      .patterns {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+
+      .stats {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Back Arrow Button -->
+    <button id="backArrow" class="back-arrow">←</button>
+
+    <h1>Conway's Game of Life</h1>
+    <p class="description">
+      Click on cells to toggle them alive/dead. The Game of Life follows simple
+      rules:
+      <br />1. Any live cell with fewer than 2 or more than 3 live neighbors
+      dies <br />2. Any live cell with 2 or 3 live neighbors survives <br />3.
+      Any dead cell with exactly 3 live neighbors becomes alive
+    </p>
+
+    <div id="speed-control">
+      <span id="speed-label">Simulation Speed:</span>
+      <select id="speed-selector">
+        <option value="500">Slow</option>
+        <option value="250" selected>Medium</option>
+        <option value="100">Fast</option>
+        <option value="50">Very Fast</option>
+      </select>
+    </div>
+
+    <div class="controls">
+      <button id="start-btn">Start</button>
+      <button id="stop-btn" disabled>Stop</button>
+      <button id="step-btn">Step</button>
+      <button id="clear-btn">Clear</button>
+      <button id="random-btn">Random</button>
+    </div>
+
+    <div class="patterns">
+      <button id="glider-btn">Glider</button>
+      <button id="blinker-btn">Blinker</button>
+      <button id="pulsar-btn">Pulsar</button>
+      <button id="gosper-btn">Gosper Glider Gun</button>
+    </div>
+
+    <canvas id="game-canvas" width="600" height="400"></canvas>
+
+    <div class="stats">
+      <span id="generation">Generation: 0</span> |
+      <span id="population">Population: 0</span>
+    </div>
+
+    <script src="./src/common/arrow-button.js"></script>
+    <script src="./src/conway-gameoflife/main.js"></script>
+  </body>
+</html>
